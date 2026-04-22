@@ -9,6 +9,7 @@ function inject(url) {
     iframe.style.height = "100%";
     iframe.style.margin = "0";
     iframe.src = url;
+    tab.dpcument.open();
     tab.document.body.appendChild(iframe);
   }, 2000);
 }
