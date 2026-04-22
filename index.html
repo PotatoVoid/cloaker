@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Website Viewer</title>
+    <script src="injectAboutBlank.js"></script>
+  </head>
+  <body>
+    <input id="input" placeholder="url"></input>
+    <button onclick="run">Go</button>
+    <script>
+      function run() {
+        const input = document.getElementById("input").textContent;
+        inject(input);
+      }
+    </script>
+  </body>
+</html>
