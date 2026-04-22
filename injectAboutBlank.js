@@ -1,5 +1,6 @@
 function inject(url) {
   var tab = window.open('about:blank', '_blank');
+  tab.document.open();
   tab.document.write("<body><p>loading...</p></body>");
   setTimeout(function() {
     tab.document.body.style.margin = "0";
@@ -10,7 +11,6 @@ function inject(url) {
     iframe.style.height = "100%";
     iframe.style.margin = "0";
     iframe.src = url;
-    tab.dpcument.open();
-    tab.document.body.appendChild(iframe);
+    tab.document.write(iframe.outerHTML);
   }, 2000);
 }
