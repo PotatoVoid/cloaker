@@ -1,5 +1,5 @@
 function inject(url) {
-  var tab = window.open();
+  var tab = window.open('about:blank', '_blank');
   tab.document.body.style.margin = "0";
   tab.document.body.style.height = "100vh";
   var iframe = tab.document.createElement("iframe");
