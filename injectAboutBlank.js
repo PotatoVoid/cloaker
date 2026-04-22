@@ -10,5 +10,6 @@ function inject(url) {
   iframe.style.height = "100%";
   iframe.style.margin = "0";
   iframe.src = url;
+  tab.document.open();
   tab.document.write(iframe.outerHTML);
 }
