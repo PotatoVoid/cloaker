@@ -1,5 +1,6 @@
 function inject(url) {
   var tab = window.open('about:blank', '_blank');
+  tab.document.write("<body><p>loading...</p></body>");
   setTimeout(function() {
     tab.document.body.style.margin = "0";
     tab.document.body.style.height = "100vh";
