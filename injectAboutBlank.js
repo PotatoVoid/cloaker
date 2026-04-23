@@ -1,15 +1,18 @@
 function inject(url) {
   var tab = window.open('about:blank', '_blank');
   tab.document.open();
-  tab.document.write("<body><p>loading...</p></body>");
-  tab.document.body.style.margin = "0";
-  tab.document.body.style.height = "100vh";
-  var iframe = tab.document.createElement("iframe");
-  iframe.style.border = "none";
-  iframe.style.width = "100%";
-  iframe.style.height = "100%";
-  iframe.style.margin = "0";
-  iframe.src = url;
-  tab.document.open();
-  tab.document.write(iframe.outerHTML);
+  tab.document.write(`
+    <html>
+      <head>
+        <style>
+          body { margin: 0; height: 100vh; }
+          iframe { border: none; width: 100%; height: 100%; margin: 0; }
+        </style>
+      </head>
+      <body>
+        <iframe src="${url}"></iframe>
+      </body>
+    </html>
+  `);
+  tab.document.close();
 }
